@@ -83,3 +83,31 @@ print(b["x"])           --> 20
 a = nil                 --> Chỉ còn b tham chiếu tới Table
 b = nil                 --> Không còn bất kì biến nào tham chiếu tới Table
 print("------------------------------")
+-- Mỗi bảng có thể lưu trữ các giá trị với nhiều kiểu khác nhau và nó phát triển khi cần với các mục nhập mới
+a = {}                  --> Tạo bảng
+for i=1,1000 do         --> Tạo 1000 mục nhập mới
+    a[i] = i * 2
+end
+print(a[9])             --> 18
+a["x"] = 10
+print(a["x"])           --> 10
+print(a["y"])           --> nil
+-- Các trường trong Table sẽ trả về nil nếu chúng không được khởi tạo
+-- Có thể gán nil cho một trường trong Table để xóa nó
+print("------------------------------")
+-- Có thể viết gọn lại như sau
+a.x = 10
+print(a.x)              --> same as a["x"] = 10
+print(a.x)              --> same as print(a["x"]) -> 10
+print("------------------------------")
+-- Rất dễ nhầm lẫn a.x với a[x]
+-- a.x đại diện cho a["x"] - là một bảng được lập chỉ mục bởi CHUỖI "x"
+-- a[x] là một bảng được lập chỉ mục theo giá trị của BIẾN x
+a = {}
+x = "y"
+a[x] = 10
+print(a[x])             --> 10
+print(a.x)              --> nil - x trong trường hợp này là biến. Kết quả trả về là 10 khi x là một chuỗi a["x"] được gán bằng 10
+print(a["x"])           --> nil - x trong trường hợp này là một biến
+print(a["y"])           --> 10
+print("------------------------------")
