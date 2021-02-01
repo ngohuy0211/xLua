@@ -1,0 +1,2 @@
+- Khi trình biên dịch bắt đầu load 1 file, nó sẽ bỏ qua dòng đầu tiên của nó nếu dòng đó bắt đầu bằng một Dấu Số ('#')
+- Tính năng này cho phép suwer dụng lua như một trình biên dịch các tập lệnh trong hệ thống Unix
