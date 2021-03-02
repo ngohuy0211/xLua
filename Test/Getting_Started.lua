@@ -11,6 +11,6 @@ print(fact(a))
 
 dofile("Chunk.lua")  -- Doc file lua
 n = norm(3.4, 1.0)
-print(twice(n))
+print(twice(n)) -- học kiểu này làm j cho nó lâu, vào đọc code a giang 1 buổi là làm đc mà, ez lắm
 
 

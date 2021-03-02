@@ -111,3 +111,69 @@ print(a.x)              --> nil - x trong trường hợp này là biến. Kết
 print(a["x"])           --> nil - x trong trường hợp này là một biến
 print(a["y"])           --> 10
 print("------------------------------")
+
+--------------------------------------------Relational Operators----------------------------------------------
+-- Toán tử so sánh: ~= là phủ định của ==
+-- Ngoài ra, Lua so sánh các chuỗi theo thứ tự bảng chữ cái
+-- Không thể so sánh hai kiểu khác nhau
+--------------------------------------------Logical Operators----------------------------------------------
+--------------------------------------------Numberic For----------------------------------------------
+local found = nil
+for i=1,10 do
+    print(i)
+    if a[i] == 5 then
+        found = i
+        break
+    end
+end
+print(found)
+print("------------------------------")
+--------------------------------------------Generic For----------------------------------------------
+-- Print all values of array 'a'
+-- for i,v in ipairs(a) do
+--     print(v)
+-- end
+-- Print all keys of table 't'
+-- for k in pairs(t) do
+--     print(k)
+-- end
+-- --------------------------------
+days = {"Sunday", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday"}
+
+for k in pairs(days) do
+    print(k)
+end
+
+print("------------------------------")
+-- Bảng đảo ngược(thủ công)
+-- revDays = {["Sunday"] = 1, ["Monday"] = 2,
+--     ["Tuesday"] = 3, ["Wednesday"] = 4,
+--     ["Thursday"] = 5, ["Friday"] = 6,
+--     ["Saturday"] = 7}
+-- x = "Tuesday"
+-- print(revDays[x])
+-- Bảng đảo ngược(sử dụng for)
+revDays = {}
+for i,v in ipairs(days) do
+    revDays[v] = i
+    print(revDays[v])
+    print(v)
+end
+
+print("------------------------------")
+--------------------------------------------FUNCTION----------------------------------------------
+function maximum (a)
+    local mi = 1          -- maximum index
+    local m = a[mi]       -- maximum value
+    for i,val in ipairs(a) do
+        if val > m then
+            mi = i
+            m = val
+        end
+    end
+    return m, mi
+end
+  
+print(maximum({8,10,23,12,5}))     --> 23(Giá trị phần tử)   3(thứ tự phần tử)
+print("------------------------------")
